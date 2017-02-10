@@ -7,15 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		538B085534BBA9D5974F50E3 /* libPods-RyWebChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */; };
+		A13A0D3E1E4C3D27009E4B5F /* MAResponseSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */; };
+		A13A0D411E4C4C6C009E4B5F /* MAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D401E4C4C6C009E4B5F /* MAClient.m */; };
+		A13A0D441E4C4C90009E4B5F /* MAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D431E4C4C90009E4B5F /* MAMessage.m */; };
+		A13A0D471E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */; };
+		A13A0D4F1E4C7422009E4B5F /* MAEmojiUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */; };
+		A13A0D501E4C7422009E4B5F /* MAEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */; };
+		A13A0D531E4C74C9009E4B5F /* chat_bg_default.png in Resources */ = {isa = PBXBuildFile; fileRef = A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */; };
+		A13A0D551E4C75A7009E4B5F /* MAEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */; };
+		A13A0D5A1E4DC25F009E4B5F /* EliteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D591E4DC25F009E4B5F /* EliteMessage.m */; };
 		A1431F3C1E4C0A6A001BF142 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F3B1E4C0A6A001BF142 /* main.m */; };
 		A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */; };
 		A1431F421E4C0A6A001BF142 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F411E4C0A6A001BF142 /* ViewController.m */; };
 		A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1431F431E4C0A6A001BF142 /* Main.storyboard */; };
 		A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1431F461E4C0A6A001BF142 /* Assets.xcassets */; };
 		A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1431F481E4C0A6A001BF142 /* LaunchScreen.storyboard */; };
+		A1431F521E4C0C17001BF142 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F511E4C0C17001BF142 /* AssetsLibrary.framework */; };
+		A1431F541E4C0C1D001BF142 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F531E4C0C1D001BF142 /* AudioToolbox.framework */; };
+		A1431F561E4C0C23001BF142 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F551E4C0C23001BF142 /* AVFoundation.framework */; };
+		A1431F581E4C0C29001BF142 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F571E4C0C29001BF142 /* CFNetwork.framework */; };
+		A1431F5A1E4C0C30001BF142 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F591E4C0C30001BF142 /* CoreAudio.framework */; };
+		A1431F5C1E4C0C35001BF142 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F5B1E4C0C35001BF142 /* CoreGraphics.framework */; };
+		A1431F5E1E4C0C3A001BF142 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F5D1E4C0C3A001BF142 /* CoreLocation.framework */; };
+		A1431F601E4C0C3F001BF142 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F5F1E4C0C3F001BF142 /* CoreMedia.framework */; };
+		A1431F621E4C0C44001BF142 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F611E4C0C44001BF142 /* CoreTelephony.framework */; };
+		A1431F641E4C0C59001BF142 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F631E4C0C59001BF142 /* CoreVideo.framework */; };
+		A1431F661E4C0C5F001BF142 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F651E4C0C5F001BF142 /* ImageIO.framework */; };
+		A1431F681E4C0C6A001BF142 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F671E4C0C6A001BF142 /* libc++.tbd */; };
+		A1431F6A1E4C0C70001BF142 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F691E4C0C70001BF142 /* libc++abi.tbd */; };
+		A1431F6C1E4C0C78001BF142 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F6B1E4C0C78001BF142 /* libsqlite3.tbd */; };
+		A1431F6E1E4C0C81001BF142 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F6D1E4C0C81001BF142 /* libstdc++.tbd */; };
+		A1431F701E4C0CDD001BF142 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F6F1E4C0CDD001BF142 /* libxml2.tbd */; };
+		A1431F721E4C0CE4001BF142 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F711E4C0CE4001BF142 /* libz.tbd */; };
+		A1431F741E4C0CEC001BF142 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F731E4C0CEC001BF142 /* MapKit.framework */; };
+		A1431F761E4C0CF2001BF142 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F751E4C0CF2001BF142 /* OpenGLES.framework */; };
+		A1431F781E4C0CF7001BF142 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F771E4C0CF7001BF142 /* QuartzCore.framework */; };
+		A1431F7A1E4C0CFD001BF142 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F791E4C0CFC001BF142 /* SystemConfiguration.framework */; };
+		A1431F7C1E4C0D03001BF142 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7B1E4C0D03001BF142 /* UIKit.framework */; };
+		A1431F7E1E4C0D09001BF142 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7D1E4C0D09001BF142 /* Photos.framework */; };
+		A1431F801E4C0D0F001BF142 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7F1E4C0D0F001BF142 /* SafariServices.framework */; };
+		A1431F831E4C1340001BF142 /* MARyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F821E4C1340001BF142 /* MARyChatViewController.m */; };
+		A1431F8C1E4C16D5001BF142 /* MAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */; };
+		A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */; };
+		A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F901E4C185A001BF142 /* MAHttpService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.release.xcconfig"; sourceTree = "<group>"; };
+		A13A0D3B1E4C3BC2009E4B5F /* MAClientConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAClientConfig.h; sourceTree = "<group>"; };
+		A13A0D3C1E4C3D27009E4B5F /* MAResponseSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAResponseSocket.h; sourceTree = "<group>"; };
+		A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAResponseSocket.m; sourceTree = "<group>"; };
+		A13A0D3F1E4C4C6C009E4B5F /* MAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAClient.h; sourceTree = "<group>"; };
+		A13A0D401E4C4C6C009E4B5F /* MAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAClient.m; sourceTree = "<group>"; };
+		A13A0D421E4C4C90009E4B5F /* MAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMessage.h; sourceTree = "<group>"; };
+		A13A0D431E4C4C90009E4B5F /* MAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMessage.m; sourceTree = "<group>"; };
+		A13A0D451E4C72AA009E4B5F /* RCDCustomerEmoticonTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDCustomerEmoticonTab.h; sourceTree = "<group>"; };
+		A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDCustomerEmoticonTab.m; sourceTree = "<group>"; };
+		A13A0D491E4C7422009E4B5F /* MAEmojiUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEmojiUtil.h; sourceTree = "<group>"; };
+		A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEmojiUtil.m; sourceTree = "<group>"; };
+		A13A0D4B1E4C7422009E4B5F /* MAEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEmojiView.h; sourceTree = "<group>"; };
+		A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEmojiView.m; sourceTree = "<group>"; };
+		A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_bg_default.png; sourceTree = "<group>"; };
+		A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MAEmoji.bundle; sourceTree = "<group>"; };
+		A13A0D561E4D9632009E4B5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A13A0D571E4D9632009E4B5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A13A0D581E4DC25F009E4B5F /* EliteMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliteMessage.h; sourceTree = "<group>"; };
+		A13A0D591E4DC25F009E4B5F /* EliteMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliteMessage.m; sourceTree = "<group>"; };
 		A1431F371E4C0A6A001BF142 /* RyWebChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RyWebChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1431F3B1E4C0A6A001BF142 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A1431F3D1E4C0A6A001BF142 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +84,41 @@
 		A1431F461E4C0A6A001BF142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1431F491E4C0A6A001BF142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1431F4B1E4C0A6A001BF142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1431F511E4C0C17001BF142 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		A1431F531E4C0C1D001BF142 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A1431F551E4C0C23001BF142 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A1431F571E4C0C29001BF142 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A1431F591E4C0C30001BF142 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A1431F5B1E4C0C35001BF142 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1431F5D1E4C0C3A001BF142 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A1431F5F1E4C0C3F001BF142 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A1431F611E4C0C44001BF142 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A1431F631E4C0C59001BF142 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A1431F651E4C0C5F001BF142 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A1431F671E4C0C6A001BF142 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A1431F691E4C0C70001BF142 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		A1431F6B1E4C0C78001BF142 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A1431F6D1E4C0C81001BF142 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		A1431F6F1E4C0CDD001BF142 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		A1431F711E4C0CE4001BF142 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A1431F731E4C0CEC001BF142 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A1431F751E4C0CF2001BF142 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A1431F771E4C0CF7001BF142 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A1431F791E4C0CFC001BF142 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A1431F7B1E4C0D03001BF142 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A1431F7D1E4C0D09001BF142 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		A1431F7F1E4C0D0F001BF142 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		A1431F811E4C1340001BF142 /* MARyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARyChatViewController.h; sourceTree = "<group>"; };
+		A1431F821E4C1340001BF142 /* MARyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARyChatViewController.m; sourceTree = "<group>"; };
+		A1431F861E4C16D5001BF142 /* CommendConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommendConfig.h; sourceTree = "<group>"; };
+		A1431F871E4C16D5001BF142 /* MAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAFNetworkingTool.h; sourceTree = "<group>"; };
+		A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAFNetworkingTool.m; sourceTree = "<group>"; };
+		A1431F8A1E4C16D5001BF142 /* MASessionTimeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASessionTimeOut.h; sourceTree = "<group>"; };
+		A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASessionTimeOut.m; sourceTree = "<group>"; };
+		A1431F8F1E4C185A001BF142 /* MAHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAHttpService.h; sourceTree = "<group>"; };
+		A1431F901E4C185A001BF142 /* MAHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAHttpService.m; sourceTree = "<group>"; };
+		A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RyWebChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +126,98 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1431F801E4C0D0F001BF142 /* SafariServices.framework in Frameworks */,
+				A1431F7E1E4C0D09001BF142 /* Photos.framework in Frameworks */,
+				A1431F7C1E4C0D03001BF142 /* UIKit.framework in Frameworks */,
+				A1431F7A1E4C0CFD001BF142 /* SystemConfiguration.framework in Frameworks */,
+				A1431F781E4C0CF7001BF142 /* QuartzCore.framework in Frameworks */,
+				A1431F761E4C0CF2001BF142 /* OpenGLES.framework in Frameworks */,
+				A1431F741E4C0CEC001BF142 /* MapKit.framework in Frameworks */,
+				A1431F721E4C0CE4001BF142 /* libz.tbd in Frameworks */,
+				A1431F701E4C0CDD001BF142 /* libxml2.tbd in Frameworks */,
+				A1431F6E1E4C0C81001BF142 /* libstdc++.tbd in Frameworks */,
+				A1431F6C1E4C0C78001BF142 /* libsqlite3.tbd in Frameworks */,
+				A1431F6A1E4C0C70001BF142 /* libc++abi.tbd in Frameworks */,
+				A1431F681E4C0C6A001BF142 /* libc++.tbd in Frameworks */,
+				A1431F661E4C0C5F001BF142 /* ImageIO.framework in Frameworks */,
+				A1431F641E4C0C59001BF142 /* CoreVideo.framework in Frameworks */,
+				A1431F621E4C0C44001BF142 /* CoreTelephony.framework in Frameworks */,
+				A1431F601E4C0C3F001BF142 /* CoreMedia.framework in Frameworks */,
+				A1431F5E1E4C0C3A001BF142 /* CoreLocation.framework in Frameworks */,
+				A1431F5C1E4C0C35001BF142 /* CoreGraphics.framework in Frameworks */,
+				A1431F5A1E4C0C30001BF142 /* CoreAudio.framework in Frameworks */,
+				A1431F581E4C0C29001BF142 /* CFNetwork.framework in Frameworks */,
+				A1431F561E4C0C23001BF142 /* AVFoundation.framework in Frameworks */,
+				A1431F541E4C0C1D001BF142 /* AudioToolbox.framework in Frameworks */,
+				A1431F521E4C0C17001BF142 /* AssetsLibrary.framework in Frameworks */,
+				538B085534BBA9D5974F50E3 /* libPods-RyWebChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48826400B833FB19D259787E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1431F7F1E4C0D0F001BF142 /* SafariServices.framework */,
+				A1431F7D1E4C0D09001BF142 /* Photos.framework */,
+				A1431F7B1E4C0D03001BF142 /* UIKit.framework */,
+				A1431F791E4C0CFC001BF142 /* SystemConfiguration.framework */,
+				A1431F771E4C0CF7001BF142 /* QuartzCore.framework */,
+				A1431F751E4C0CF2001BF142 /* OpenGLES.framework */,
+				A1431F731E4C0CEC001BF142 /* MapKit.framework */,
+				A1431F711E4C0CE4001BF142 /* libz.tbd */,
+				A1431F6F1E4C0CDD001BF142 /* libxml2.tbd */,
+				A1431F6D1E4C0C81001BF142 /* libstdc++.tbd */,
+				A1431F6B1E4C0C78001BF142 /* libsqlite3.tbd */,
+				A1431F691E4C0C70001BF142 /* libc++abi.tbd */,
+				A1431F671E4C0C6A001BF142 /* libc++.tbd */,
+				A1431F651E4C0C5F001BF142 /* ImageIO.framework */,
+				A1431F631E4C0C59001BF142 /* CoreVideo.framework */,
+				A1431F611E4C0C44001BF142 /* CoreTelephony.framework */,
+				A1431F5F1E4C0C3F001BF142 /* CoreMedia.framework */,
+				A1431F5D1E4C0C3A001BF142 /* CoreLocation.framework */,
+				A1431F5B1E4C0C35001BF142 /* CoreGraphics.framework */,
+				A1431F591E4C0C30001BF142 /* CoreAudio.framework */,
+				A1431F571E4C0C29001BF142 /* CFNetwork.framework */,
+				A1431F551E4C0C23001BF142 /* AVFoundation.framework */,
+				A1431F531E4C0C1D001BF142 /* AudioToolbox.framework */,
+				A1431F511E4C0C17001BF142 /* AssetsLibrary.framework */,
+				A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		890C1E329AE83D510BF04E66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */,
+				3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A13A0D481E4C7422009E4B5F /* MAEmojiView */ = {
+			isa = PBXGroup;
+			children = (
+				A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */,
+				A13A0D491E4C7422009E4B5F /* MAEmojiUtil.h */,
+				A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */,
+				A13A0D4B1E4C7422009E4B5F /* MAEmojiView.h */,
+				A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */,
+				A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */,
+			);
+			path = MAEmojiView;
+			sourceTree = "<group>";
+		};
 		A1431F2E1E4C0A6A001BF142 = {
 			isa = PBXGroup;
 			children = (
 				A1431F391E4C0A6A001BF142 /* RyWebChat */,
 				A1431F381E4C0A6A001BF142 /* Products */,
+				890C1E329AE83D510BF04E66 /* Pods */,
+				48826400B833FB19D259787E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +232,25 @@
 		A1431F391E4C0A6A001BF142 /* RyWebChat */ = {
 			isa = PBXGroup;
 			children = (
+				A1431F841E4C16D5001BF142 /* MACommot */,
+				A13A0D481E4C7422009E4B5F /* MAEmojiView */,
+				A13A0D3B1E4C3BC2009E4B5F /* MAClientConfig.h */,
+				A13A0D3F1E4C4C6C009E4B5F /* MAClient.h */,
+				A13A0D401E4C4C6C009E4B5F /* MAClient.m */,
+				A13A0D421E4C4C90009E4B5F /* MAMessage.h */,
+				A13A0D431E4C4C90009E4B5F /* MAMessage.m */,
 				A1431F3D1E4C0A6A001BF142 /* AppDelegate.h */,
 				A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */,
 				A1431F401E4C0A6A001BF142 /* ViewController.h */,
 				A1431F411E4C0A6A001BF142 /* ViewController.m */,
+				A1431F811E4C1340001BF142 /* MARyChatViewController.h */,
+				A1431F821E4C1340001BF142 /* MARyChatViewController.m */,
+				A13A0D451E4C72AA009E4B5F /* RCDCustomerEmoticonTab.h */,
+				A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */,
+				A13A0D3C1E4C3D27009E4B5F /* MAResponseSocket.h */,
+				A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */,
+				A13A0D581E4DC25F009E4B5F /* EliteMessage.h */,
+				A13A0D591E4DC25F009E4B5F /* EliteMessage.m */,
 				A1431F431E4C0A6A001BF142 /* Main.storyboard */,
 				A1431F461E4C0A6A001BF142 /* Assets.xcassets */,
 				A1431F481E4C0A6A001BF142 /* LaunchScreen.storyboard */,
@@ -79,6 +268,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A1431F841E4C16D5001BF142 /* MACommot */ = {
+			isa = PBXGroup;
+			children = (
+				A1431F8E1E4C184C001BF142 /* MAHttpService */,
+				A1431F851E4C16D5001BF142 /* AFNHttpService */,
+			);
+			path = MACommot;
+			sourceTree = "<group>";
+		};
+		A1431F851E4C16D5001BF142 /* AFNHttpService */ = {
+			isa = PBXGroup;
+			children = (
+				A1431F861E4C16D5001BF142 /* CommendConfig.h */,
+				A1431F871E4C16D5001BF142 /* MAFNetworkingTool.h */,
+				A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */,
+				A1431F891E4C16D5001BF142 /* Tools */,
+			);
+			path = AFNHttpService;
+			sourceTree = "<group>";
+		};
+		A1431F891E4C16D5001BF142 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A1431F8A1E4C16D5001BF142 /* MASessionTimeOut.h */,
+				A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A1431F8E1E4C184C001BF142 /* MAHttpService */ = {
+			isa = PBXGroup;
+			children = (
+				A1431F8F1E4C185A001BF142 /* MAHttpService.h */,
+				A1431F901E4C185A001BF142 /* MAHttpService.m */,
+			);
+			path = MAHttpService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +313,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1431F4E1E4C0A6A001BF142 /* Build configuration list for PBXNativeTarget "RyWebChat" */;
 			buildPhases = (
+				07C6A556965A1C6749921A53 /* [CP] Check Pods Manifest.lock */,
 				A1431F331E4C0A6A001BF142 /* Sources */,
 				A1431F341E4C0A6A001BF142 /* Frameworks */,
 				A1431F351E4C0A6A001BF142 /* Resources */,
+				F357B5E73A408CD23ADC2737 /* [CP] Embed Pods Frameworks */,
+				101624627E9319B0B876822F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +340,7 @@
 				TargetAttributes = {
 					A1431F361E4C0A6A001BF142 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EBW3P2T227;
 					};
 				};
 			};
@@ -138,11 +369,61 @@
 			files = (
 				A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */,
 				A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */,
+				A13A0D551E4C75A7009E4B5F /* MAEmoji.bundle in Resources */,
+				A13A0D531E4C74C9009E4B5F /* chat_bg_default.png in Resources */,
 				A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07C6A556965A1C6749921A53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		101624627E9319B0B876822F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F357B5E73A408CD23ADC2737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1431F331E4C0A6A001BF142 /* Sources */ = {
@@ -151,7 +432,18 @@
 			files = (
 				A1431F421E4C0A6A001BF142 /* ViewController.m in Sources */,
 				A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */,
+				A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */,
+				A13A0D471E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m in Sources */,
+				A13A0D4F1E4C7422009E4B5F /* MAEmojiUtil.m in Sources */,
+				A13A0D501E4C7422009E4B5F /* MAEmojiView.m in Sources */,
+				A13A0D441E4C4C90009E4B5F /* MAMessage.m in Sources */,
+				A13A0D3E1E4C3D27009E4B5F /* MAResponseSocket.m in Sources */,
+				A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */,
+				A13A0D411E4C4C6C009E4B5F /* MAClient.m in Sources */,
+				A1431F8C1E4C16D5001BF142 /* MAFNetworkingTool.m in Sources */,
 				A1431F3C1E4C0A6A001BF142 /* main.m in Sources */,
+				A1431F831E4C1340001BF142 /* MARyChatViewController.m in Sources */,
+				A13A0D5A1E4DC25F009E4B5F /* EliteMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +454,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A1431F441E4C0A6A001BF142 /* Base */,
+				A13A0D561E4D9632009E4B5F /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -170,6 +463,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A1431F491E4C0A6A001BF142 /* Base */,
+				A13A0D571E4D9632009E4B5F /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -261,23 +555,31 @@
 		};
 		A1431F4F1E4C0A6A001BF142 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RyWebChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.n22.nwk.RyWebChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7e23f620-7594-4b39-bb91-f6e6ae9de03d";
 			};
 			name = Debug;
 		};
 		A1431F501E4C0A6A001BF142 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RyWebChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.n22.nwk.RyWebChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7e23f620-7594-4b39-bb91-f6e6ae9de03d";
 			};
 			name = Release;
 		};
@@ -300,6 +602,7 @@
 				A1431F501E4C0A6A001BF142 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

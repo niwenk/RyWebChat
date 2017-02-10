@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <RongIMKit/RongIMKit.h>
+#import "MAHttpService.h"
+#import "EliteMessage.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[RCIM sharedRCIM] initWithAppKey:@"6tnym1br6tba7"];
+    [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
+    //设置Log级别，开发阶段打印详细log
+    [RCIMClient sharedRCIMClient].logLevel = RC_Log_Level_Info;
+    
     return YES;
 }
 
