@@ -8,6 +8,7 @@
 
 #import "MAHttpService.h"
 #import "MAFNetworkingTool.h"
+#import "MAJSONObject.h"
 
 @implementation MAHttpService
 
@@ -19,10 +20,12 @@
  */
 + (void)getRyToken:(NSString *)urlString paramer:(id)paramer success:(void (^)(NSString *token))successBlock error:(void (^)(NSError *error))errorBlock {
     [MAFNetworkingTool POST:urlString parameters:paramer successBlock:^(id responesObj) {
-        NSDictionary *dic = responesObj;
-        BOOL result = [dic[@"result"] intValue] == 1;
+        
+        MAJSONObject *json = [MAJSONObject initJSONObject:[responesObj mj_JSONString]];
+        
+        BOOL result = [json getInt:@"result"] == 1;
         if (result) {
-            successBlock(dic[@"token"]);
+            successBlock([json getString:@"token"]);
         } else {
             successBlock(nil);
         }

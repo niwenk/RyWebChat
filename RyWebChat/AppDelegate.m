@@ -20,10 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[RCIM sharedRCIM] initWithAppKey:@"pgyu6atqpg77u"];
+    [[RCIM sharedRCIM] initWithAppKey:MARyAppKey];
+    
     [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
     //开启用户信息和群组信息的持久化
     [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+    
     [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
     
     //设置Log级别，开发阶段打印详细log
