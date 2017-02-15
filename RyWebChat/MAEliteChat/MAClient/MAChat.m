@@ -7,14 +7,13 @@
 //
 
 #import "MAChat.h"
-#import "NSDictionary+MAJSON.h"
 
 @interface MAChat()
 @property (strong, nonatomic) MAClient *client;
-@property (assign, nonatomic, readwrite) int sessionId;
+@property (strong, nonatomic) MARequest *request;
+@property (strong, nonatomic) MASession *session;
 @property (strong, nonatomic, readwrite) NSString *tokenStr;
 @property (strong, nonatomic, readwrite) NSArray *agents;
-@property (strong, nonatomic, readwrite) NSString *currentAgentId;
 
 @end
 
@@ -26,7 +25,6 @@ static MAChat *chat;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         chat = [[MAChat alloc] init];
-        chat.sessionId = -1;
     });
     
     return chat;
@@ -35,28 +33,54 @@ static MAChat *chat;
 - (void)setClient:(MAClient *)client {
     _client = client;
 }
+- (void)setRequest:(MARequest *)request {
+    _request = request;
+}
 - (void)setTokenStr:(NSString *)tokenStr {
     _tokenStr = tokenStr;
 }
-- (void)setSessionId:(int)sessionId {
-    _sessionId = sessionId;
+- (void)setSession:(MASession *)session {
+    _session = session;
 }
 - (void)setAgents:(NSArray *)agents {
     _agents = agents;
 }
--(void)setCurrentAgentId:(NSString *)currentAgentId {
-    _currentAgentId = currentAgentId;
-}
 
-+ (NSDictionary *)getCurrentAgent {
+- (NSDictionary *)getAgentWithId:(NSString *)agentId {
     
-    MAChat *chat = [MAChat getInstance];
-    
-    for (NSDictionary *agent in chat.agents) {
-        if ([[agent getString:@"id"] isEqualToString:chat.currentAgentId]) {
+    for (NSDictionary *agent in self.agents) {
+        if ([[agent getString:@"id"] isEqualToString:agentId]) {
             return agent;
         }
     }
     return nil;
+}
+
+- (long)getRequestId {
+    if (self.request) {
+        return self.request.requestId;
+    }
+    
+    return 0;
+}
+
+- (long)getSessionId {
+    if (self.session) {
+        return self.session.sessionId;
+    }
+    
+    return 0;
+}
+
+- (MAAgent *)getCurrentAgent {
+    if (self.session) {
+        return self.session.agent;
+    }
+    
+    return nil;
+}
+
+- (void)updateSession:(MAAgent *)agent {
+    self.session.agent = agent;
 }
 @end

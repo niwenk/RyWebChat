@@ -18,6 +18,10 @@
     return [self[key] intValue];
 }
 
+- (long)getLong:(NSString *)key {
+    return [self[key] longValue];
+}
+
 - (NSDictionary *)getObject:(NSString *)key {
     return self[key];
 }

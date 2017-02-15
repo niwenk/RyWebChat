@@ -13,5 +13,7 @@
 
 - (int)getInt:(NSString *)key;
 
+- (long)getLong:(NSString *)key;
+
 - (NSDictionary *)getObject:(NSString *)key;
 @end

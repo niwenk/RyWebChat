@@ -41,6 +41,9 @@
 		A1431F8C1E4C16D5001BF142 /* MAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */; };
 		A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */; };
 		A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F901E4C185A001BF142 /* MAHttpService.m */; };
+		A1EDE1861E54490700F9904D /* MARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE1851E54490700F9904D /* MARequest.m */; };
+		A1EDE1891E544ADA00F9904D /* MASession.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE1881E544ADA00F9904D /* MASession.m */; };
+		A1EDE18C1E544B4E00F9904D /* MAAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE18B1E544B4E00F9904D /* MAAgent.m */; };
 		A1F399431E5419320082D513 /* NSDictionary+MAJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399421E5419320082D513 /* NSDictionary+MAJSON.m */; };
 		A1F399581E5419A10082D513 /* MARyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399471E5419A10082D513 /* MARyChatViewController.m */; };
 		A1F399591E5419A10082D513 /* EliteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F3994A1E5419A10082D513 /* EliteMessage.m */; };
@@ -96,6 +99,12 @@
 		A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASessionTimeOut.m; sourceTree = "<group>"; };
 		A1431F8F1E4C185A001BF142 /* MAHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAHttpService.h; sourceTree = "<group>"; };
 		A1431F901E4C185A001BF142 /* MAHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAHttpService.m; sourceTree = "<group>"; };
+		A1EDE1841E54490700F9904D /* MARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARequest.h; sourceTree = "<group>"; };
+		A1EDE1851E54490700F9904D /* MARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARequest.m; sourceTree = "<group>"; };
+		A1EDE1871E544ADA00F9904D /* MASession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASession.h; sourceTree = "<group>"; };
+		A1EDE1881E544ADA00F9904D /* MASession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASession.m; sourceTree = "<group>"; };
+		A1EDE18A1E544B4E00F9904D /* MAAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAgent.h; sourceTree = "<group>"; };
+		A1EDE18B1E544B4E00F9904D /* MAAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAgent.m; sourceTree = "<group>"; };
 		A1F3992D1E53EB1E0082D513 /* RyChat-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RyChat-PrefixHeader.pch"; sourceTree = "<group>"; };
 		A1F399411E5419320082D513 /* NSDictionary+MAJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MAJSON.h"; sourceTree = "<group>"; };
 		A1F399421E5419320082D513 /* NSDictionary+MAJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MAJSON.m"; sourceTree = "<group>"; };
@@ -318,6 +327,12 @@
 				A1F3994A1E5419A10082D513 /* EliteMessage.m */,
 				A1F3994B1E5419A10082D513 /* MAJSONObject.h */,
 				A1F3994C1E5419A10082D513 /* MAJSONObject.m */,
+				A1EDE1841E54490700F9904D /* MARequest.h */,
+				A1EDE1851E54490700F9904D /* MARequest.m */,
+				A1EDE1871E544ADA00F9904D /* MASession.h */,
+				A1EDE1881E544ADA00F9904D /* MASession.m */,
+				A1EDE18A1E544B4E00F9904D /* MAAgent.h */,
+				A1EDE18B1E544B4E00F9904D /* MAAgent.m */,
 			);
 			path = MAChatModel;
 			sourceTree = "<group>";
@@ -469,10 +484,13 @@
 				A1F399591E5419A10082D513 /* EliteMessage.m in Sources */,
 				A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */,
 				A1F399431E5419320082D513 /* NSDictionary+MAJSON.m in Sources */,
+				A1EDE18C1E544B4E00F9904D /* MAAgent.m in Sources */,
 				A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */,
 				A1F3995B1E5419A10082D513 /* MAChat.m in Sources */,
 				A1F399581E5419A10082D513 /* MARyChatViewController.m in Sources */,
+				A1EDE1891E544ADA00F9904D /* MASession.m in Sources */,
 				A1F3995E1E5419A10082D513 /* MAMessageUtils.m in Sources */,
+				A1EDE1861E54490700F9904D /* MARequest.m in Sources */,
 				A1F3995A1E5419A10082D513 /* MAJSONObject.m in Sources */,
 				A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */,
 				A1F3995D1E5419A10082D513 /* MAEliteChat.m in Sources */,

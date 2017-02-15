@@ -99,5 +99,16 @@ typedef enum {
     MAINTERNAL_ERROR = -100
 }MASocketException;
 
+typedef enum {
+    MANORMAL = 0,
+    MATRACK_CHANGE = 1,
+    MAPUSH_RATING = 2,
+    MAAFK_ELAPSED_NOTIFY = 3,
+    MAAFK_ELAPSED_CLOSE_SESSION = 4,
+    MATYPING = 5,
+    MAINVITE_NOTICE = 10,
+    MATRANSFER_NOTICE = 11
+}MANoticeMessageType;
+
 
 #endif /* MAConfig_h */

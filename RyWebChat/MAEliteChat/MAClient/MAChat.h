@@ -7,21 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDictionary+MAJSON.h"
 #import "MAClient.h"
+#import "MARequest.h"
+#import "MASession.h"
 
 @interface MAChat : NSObject
 
 @property (strong, nonatomic, readonly) NSString *tokenStr;
-@property (assign, nonatomic, readonly) int sessionId;
 @property (strong, nonatomic, readonly) NSArray *agents;
-@property (strong, nonatomic, readonly) NSString *currentAgentId;
 
 + (instancetype)getInstance;
 
 - (void)setClient:(MAClient *)client;
+- (void)setRequest:(MARequest *)request;
+- (void)setSession:(MASession *)session;
 - (void)setTokenStr:(NSString *)tokenStr;
-- (void)setSessionId:(int)sessionId;
 - (void)setAgents:(NSArray *)agents;
-- (void)setCurrentAgentId:(NSString *)currentAgentId;
-+ (NSDictionary *)getCurrentAgent;
+
+- (long)getRequestId;
+- (long)getSessionId;
+- (MAAgent *)getCurrentAgent;
+- (NSDictionary *)getAgentWithId:(NSString *)agentId;
+
+- (void)updateSession:(MAAgent *)agent;
 @end

@@ -33,6 +33,10 @@
     return [self.jsonDic getInt:key];
 }
 
+- (long)getLong:(NSString *)key {
+    return [self.jsonDic getLong:key];
+}
+
 - (id)getObject:(NSString *)key {
     return [self.jsonDic getObject:key];
 }

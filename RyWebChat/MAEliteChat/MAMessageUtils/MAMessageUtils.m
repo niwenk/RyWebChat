@@ -43,16 +43,15 @@
  */
 + (NSString *)getTextMessageJsonStr {
     
-    if ([MAChat getInstance].sessionId == -1) {
-        NSLog(@"error: session is nil");
-        
-        return nil;
-    }
-    
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
     dic[@"token"] = [MAChat getInstance].tokenStr;//登录成功后获取到的凭据
-    dic[@"sessionId"] = @([MAChat getInstance].sessionId);//聊天会话号，排队成功后返回
+    
+    if ([[MAChat getInstance] getSessionId] == 0) {
+        dic[@"requestId"] = @([[MAChat getInstance] getRequestId]);//聊天会话号，排队成功后返回
+    } else {
+        dic[@"sessionId"] = @([[MAChat getInstance] getSessionId]);//聊天会话号，排队成功后返回
+    }
     
     return [dic mj_JSONString];
 }
@@ -63,17 +62,15 @@
  */
 + (NSString *)getVoiceMessageJsonStr:(long long)duration {
 
-    if ([MAChat getInstance].sessionId == -1) {
-        NSLog(@"error: session is nil");
-
-        return nil;
-    }
-
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
 
     dic[@"token"] = [MAChat getInstance].tokenStr;//登录成功后获取到的凭据
     dic[@"length"] = @(duration);//时长
-    dic[@"sessionId"] = @([MAChat getInstance].sessionId);//聊天会话号，排队成功后返回
+    if ([[MAChat getInstance] getSessionId] == 0) {
+        dic[@"requestId"] = @([[MAChat getInstance] getRequestId]);//聊天会话号，排队成功后返回
+    } else {
+        dic[@"sessionId"] = @([[MAChat getInstance] getSessionId]);//聊天会话号，排队成功后返回
+    }
 
     return [dic mj_JSONString];
 }

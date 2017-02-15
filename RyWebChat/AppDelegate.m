@@ -10,8 +10,9 @@
 #import <RongIMKit/RongIMKit.h>
 #import "MAHttpService.h"
 #import "EliteMessage.h"
+#import "MAChat.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<RCIMUserInfoDataSource>
 
 @end
 
@@ -28,6 +29,9 @@
     
     [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
     
+    
+    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+    
     //设置Log级别，开发阶段打印详细log
 //    [RCIMClient sharedRCIMClient].logLevel = RC_Log_Level_Info;
     
@@ -40,6 +44,17 @@
     
     return YES;
 }
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
+    
+    NSLog(@"----%@",userId);
+    
+    MAAgent *agent = [[MAChat getInstance] getCurrentAgent];
+    
+    RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:agent.userId name:agent.name portrait:agent.portraitUri];
+    
+    completion(user);
+}
+
 /**
  * 推送处理1
  * 注册推送
