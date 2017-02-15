@@ -8,15 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		538B085534BBA9D5974F50E3 /* libPods-RyWebChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */; };
-		A13A0D3E1E4C3D27009E4B5F /* MAResponseSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */; };
-		A13A0D411E4C4C6C009E4B5F /* MAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D401E4C4C6C009E4B5F /* MAClient.m */; };
-		A13A0D441E4C4C90009E4B5F /* MAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D431E4C4C90009E4B5F /* MAMessage.m */; };
-		A13A0D471E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */; };
-		A13A0D4F1E4C7422009E4B5F /* MAEmojiUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */; };
-		A13A0D501E4C7422009E4B5F /* MAEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */; };
-		A13A0D531E4C74C9009E4B5F /* chat_bg_default.png in Resources */ = {isa = PBXBuildFile; fileRef = A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */; };
-		A13A0D551E4C75A7009E4B5F /* MAEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */; };
-		A13A0D5A1E4DC25F009E4B5F /* EliteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A13A0D591E4DC25F009E4B5F /* EliteMessage.m */; };
 		A1431F3C1E4C0A6A001BF142 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F3B1E4C0A6A001BF142 /* main.m */; };
 		A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */; };
 		A1431F421E4C0A6A001BF142 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F411E4C0A6A001BF142 /* ViewController.m */; };
@@ -47,33 +38,22 @@
 		A1431F7C1E4C0D03001BF142 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7B1E4C0D03001BF142 /* UIKit.framework */; };
 		A1431F7E1E4C0D09001BF142 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7D1E4C0D09001BF142 /* Photos.framework */; };
 		A1431F801E4C0D0F001BF142 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F7F1E4C0D0F001BF142 /* SafariServices.framework */; };
-		A1431F831E4C1340001BF142 /* MARyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F821E4C1340001BF142 /* MARyChatViewController.m */; };
 		A1431F8C1E4C16D5001BF142 /* MAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */; };
 		A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */; };
 		A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F901E4C185A001BF142 /* MAHttpService.m */; };
+		A1F399291E53EAC50082D513 /* MARyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F3991F1E53EAC50082D513 /* MARyChatViewController.m */; };
+		A1F3992A1E53EAC50082D513 /* EliteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399221E53EAC50082D513 /* EliteMessage.m */; };
+		A1F3992B1E53EAC50082D513 /* MAResponseSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399241E53EAC50082D513 /* MAResponseSocket.m */; };
+		A1F3992C1E53EAC50082D513 /* MAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399271E53EAC50082D513 /* MAClient.m */; };
+		A1F399301E53ED630082D513 /* MAEliteChat.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F3992F1E53ED630082D513 /* MAEliteChat.m */; };
+		A1F399331E53F2640082D513 /* MAMessageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399321E53F2640082D513 /* MAMessageUtils.m */; };
+		A1F399361E53FA240082D513 /* MAChat.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399351E53FA240082D513 /* MAChat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.release.xcconfig"; sourceTree = "<group>"; };
-		A13A0D3B1E4C3BC2009E4B5F /* MAClientConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAClientConfig.h; sourceTree = "<group>"; };
-		A13A0D3C1E4C3D27009E4B5F /* MAResponseSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAResponseSocket.h; sourceTree = "<group>"; };
-		A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAResponseSocket.m; sourceTree = "<group>"; };
-		A13A0D3F1E4C4C6C009E4B5F /* MAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAClient.h; sourceTree = "<group>"; };
-		A13A0D401E4C4C6C009E4B5F /* MAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAClient.m; sourceTree = "<group>"; };
-		A13A0D421E4C4C90009E4B5F /* MAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMessage.h; sourceTree = "<group>"; };
-		A13A0D431E4C4C90009E4B5F /* MAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMessage.m; sourceTree = "<group>"; };
-		A13A0D451E4C72AA009E4B5F /* RCDCustomerEmoticonTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDCustomerEmoticonTab.h; sourceTree = "<group>"; };
-		A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDCustomerEmoticonTab.m; sourceTree = "<group>"; };
-		A13A0D491E4C7422009E4B5F /* MAEmojiUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEmojiUtil.h; sourceTree = "<group>"; };
-		A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEmojiUtil.m; sourceTree = "<group>"; };
-		A13A0D4B1E4C7422009E4B5F /* MAEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEmojiView.h; sourceTree = "<group>"; };
-		A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEmojiView.m; sourceTree = "<group>"; };
-		A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_bg_default.png; sourceTree = "<group>"; };
-		A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MAEmoji.bundle; sourceTree = "<group>"; };
 		A13A0D561E4D9632009E4B5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A13A0D571E4D9632009E4B5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		A13A0D581E4DC25F009E4B5F /* EliteMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliteMessage.h; sourceTree = "<group>"; };
-		A13A0D591E4DC25F009E4B5F /* EliteMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliteMessage.m; sourceTree = "<group>"; };
 		A1431F371E4C0A6A001BF142 /* RyWebChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RyWebChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1431F3B1E4C0A6A001BF142 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A1431F3D1E4C0A6A001BF142 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,8 +88,6 @@
 		A1431F7B1E4C0D03001BF142 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A1431F7D1E4C0D09001BF142 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		A1431F7F1E4C0D0F001BF142 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		A1431F811E4C1340001BF142 /* MARyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARyChatViewController.h; sourceTree = "<group>"; };
-		A1431F821E4C1340001BF142 /* MARyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARyChatViewController.m; sourceTree = "<group>"; };
 		A1431F861E4C16D5001BF142 /* CommendConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommendConfig.h; sourceTree = "<group>"; };
 		A1431F871E4C16D5001BF142 /* MAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAFNetworkingTool.h; sourceTree = "<group>"; };
 		A1431F881E4C16D5001BF142 /* MAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAFNetworkingTool.m; sourceTree = "<group>"; };
@@ -117,6 +95,22 @@
 		A1431F8B1E4C16D5001BF142 /* MASessionTimeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASessionTimeOut.m; sourceTree = "<group>"; };
 		A1431F8F1E4C185A001BF142 /* MAHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAHttpService.h; sourceTree = "<group>"; };
 		A1431F901E4C185A001BF142 /* MAHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAHttpService.m; sourceTree = "<group>"; };
+		A1F3991E1E53EAC50082D513 /* MARyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARyChatViewController.h; sourceTree = "<group>"; };
+		A1F3991F1E53EAC50082D513 /* MARyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARyChatViewController.m; sourceTree = "<group>"; };
+		A1F399211E53EAC50082D513 /* EliteMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliteMessage.h; sourceTree = "<group>"; };
+		A1F399221E53EAC50082D513 /* EliteMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliteMessage.m; sourceTree = "<group>"; };
+		A1F399231E53EAC50082D513 /* MAResponseSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAResponseSocket.h; sourceTree = "<group>"; };
+		A1F399241E53EAC50082D513 /* MAResponseSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAResponseSocket.m; sourceTree = "<group>"; };
+		A1F399261E53EAC50082D513 /* MAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAClient.h; sourceTree = "<group>"; };
+		A1F399271E53EAC50082D513 /* MAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAClient.m; sourceTree = "<group>"; };
+		A1F399281E53EAC50082D513 /* MAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAConfig.h; sourceTree = "<group>"; };
+		A1F3992D1E53EB1E0082D513 /* RyChat-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RyChat-PrefixHeader.pch"; sourceTree = "<group>"; };
+		A1F3992E1E53ED630082D513 /* MAEliteChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEliteChat.h; sourceTree = "<group>"; };
+		A1F3992F1E53ED630082D513 /* MAEliteChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEliteChat.m; sourceTree = "<group>"; };
+		A1F399311E53F2640082D513 /* MAMessageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMessageUtils.h; sourceTree = "<group>"; };
+		A1F399321E53F2640082D513 /* MAMessageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMessageUtils.m; sourceTree = "<group>"; };
+		A1F399341E53FA240082D513 /* MAChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAChat.h; sourceTree = "<group>"; };
+		A1F399351E53FA240082D513 /* MAChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAChat.m; sourceTree = "<group>"; };
 		A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RyWebChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,19 +192,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A13A0D481E4C7422009E4B5F /* MAEmojiView */ = {
-			isa = PBXGroup;
-			children = (
-				A13A0D521E4C74C9009E4B5F /* chat_bg_default.png */,
-				A13A0D491E4C7422009E4B5F /* MAEmojiUtil.h */,
-				A13A0D4A1E4C7422009E4B5F /* MAEmojiUtil.m */,
-				A13A0D4B1E4C7422009E4B5F /* MAEmojiView.h */,
-				A13A0D4C1E4C7422009E4B5F /* MAEmojiView.m */,
-				A13A0D541E4C75A7009E4B5F /* MAEmoji.bundle */,
-			);
-			path = MAEmojiView;
-			sourceTree = "<group>";
-		};
 		A1431F2E1E4C0A6A001BF142 = {
 			isa = PBXGroup;
 			children = (
@@ -233,24 +214,13 @@
 			isa = PBXGroup;
 			children = (
 				A1431F841E4C16D5001BF142 /* MACommot */,
-				A13A0D481E4C7422009E4B5F /* MAEmojiView */,
-				A13A0D3B1E4C3BC2009E4B5F /* MAClientConfig.h */,
-				A13A0D3F1E4C4C6C009E4B5F /* MAClient.h */,
-				A13A0D401E4C4C6C009E4B5F /* MAClient.m */,
-				A13A0D421E4C4C90009E4B5F /* MAMessage.h */,
-				A13A0D431E4C4C90009E4B5F /* MAMessage.m */,
+				A1F3991D1E53EAC50082D513 /* MAChatController */,
+				A1F399201E53EAC50082D513 /* MAChatModel */,
+				A1F399251E53EAC50082D513 /* MAClient */,
 				A1431F3D1E4C0A6A001BF142 /* AppDelegate.h */,
 				A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */,
 				A1431F401E4C0A6A001BF142 /* ViewController.h */,
 				A1431F411E4C0A6A001BF142 /* ViewController.m */,
-				A1431F811E4C1340001BF142 /* MARyChatViewController.h */,
-				A1431F821E4C1340001BF142 /* MARyChatViewController.m */,
-				A13A0D451E4C72AA009E4B5F /* RCDCustomerEmoticonTab.h */,
-				A13A0D461E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m */,
-				A13A0D3C1E4C3D27009E4B5F /* MAResponseSocket.h */,
-				A13A0D3D1E4C3D27009E4B5F /* MAResponseSocket.m */,
-				A13A0D581E4DC25F009E4B5F /* EliteMessage.h */,
-				A13A0D591E4DC25F009E4B5F /* EliteMessage.m */,
 				A1431F431E4C0A6A001BF142 /* Main.storyboard */,
 				A1431F461E4C0A6A001BF142 /* Assets.xcassets */,
 				A1431F481E4C0A6A001BF142 /* LaunchScreen.storyboard */,
@@ -264,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A1431F3B1E4C0A6A001BF142 /* main.m */,
+				A1F3992D1E53EB1E0082D513 /* RyChat-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,6 +275,42 @@
 				A1431F901E4C185A001BF142 /* MAHttpService.m */,
 			);
 			path = MAHttpService;
+			sourceTree = "<group>";
+		};
+		A1F3991D1E53EAC50082D513 /* MAChatController */ = {
+			isa = PBXGroup;
+			children = (
+				A1F3991E1E53EAC50082D513 /* MARyChatViewController.h */,
+				A1F3991F1E53EAC50082D513 /* MARyChatViewController.m */,
+			);
+			path = MAChatController;
+			sourceTree = "<group>";
+		};
+		A1F399201E53EAC50082D513 /* MAChatModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1F399211E53EAC50082D513 /* EliteMessage.h */,
+				A1F399221E53EAC50082D513 /* EliteMessage.m */,
+				A1F399231E53EAC50082D513 /* MAResponseSocket.h */,
+				A1F399241E53EAC50082D513 /* MAResponseSocket.m */,
+				A1F399311E53F2640082D513 /* MAMessageUtils.h */,
+				A1F399321E53F2640082D513 /* MAMessageUtils.m */,
+			);
+			path = MAChatModel;
+			sourceTree = "<group>";
+		};
+		A1F399251E53EAC50082D513 /* MAClient */ = {
+			isa = PBXGroup;
+			children = (
+				A1F399281E53EAC50082D513 /* MAConfig.h */,
+				A1F399261E53EAC50082D513 /* MAClient.h */,
+				A1F399271E53EAC50082D513 /* MAClient.m */,
+				A1F399341E53FA240082D513 /* MAChat.h */,
+				A1F399351E53FA240082D513 /* MAChat.m */,
+				A1F3992E1E53ED630082D513 /* MAEliteChat.h */,
+				A1F3992F1E53ED630082D513 /* MAEliteChat.m */,
+			);
+			path = MAClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,8 +376,6 @@
 			files = (
 				A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */,
 				A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */,
-				A13A0D551E4C75A7009E4B5F /* MAEmoji.bundle in Resources */,
-				A13A0D531E4C74C9009E4B5F /* chat_bg_default.png in Resources */,
 				A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,19 +436,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1431F421E4C0A6A001BF142 /* ViewController.m in Sources */,
+				A1F3992B1E53EAC50082D513 /* MAResponseSocket.m in Sources */,
 				A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */,
 				A1431F911E4C185A001BF142 /* MAHttpService.m in Sources */,
-				A13A0D471E4C72AA009E4B5F /* RCDCustomerEmoticonTab.m in Sources */,
-				A13A0D4F1E4C7422009E4B5F /* MAEmojiUtil.m in Sources */,
-				A13A0D501E4C7422009E4B5F /* MAEmojiView.m in Sources */,
-				A13A0D441E4C4C90009E4B5F /* MAMessage.m in Sources */,
-				A13A0D3E1E4C3D27009E4B5F /* MAResponseSocket.m in Sources */,
+				A1F399291E53EAC50082D513 /* MARyChatViewController.m in Sources */,
+				A1F3992A1E53EAC50082D513 /* EliteMessage.m in Sources */,
 				A1431F8D1E4C16D5001BF142 /* MASessionTimeOut.m in Sources */,
-				A13A0D411E4C4C6C009E4B5F /* MAClient.m in Sources */,
+				A1F399361E53FA240082D513 /* MAChat.m in Sources */,
+				A1F399331E53F2640082D513 /* MAMessageUtils.m in Sources */,
+				A1F399301E53ED630082D513 /* MAEliteChat.m in Sources */,
 				A1431F8C1E4C16D5001BF142 /* MAFNetworkingTool.m in Sources */,
 				A1431F3C1E4C0A6A001BF142 /* main.m in Sources */,
-				A1431F831E4C1340001BF142 /* MARyChatViewController.m in Sources */,
-				A13A0D5A1E4DC25F009E4B5F /* EliteMessage.m in Sources */,
+				A1F3992C1E53EAC50082D513 /* MAClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,13 +562,14 @@
 			baseConfigurationReference = F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 倪 文康 (4B4RHM3PEZ)";
+				GCC_PREFIX_HEADER = "RyWebChat/RyChat-PrefixHeader.pch";
 				INFOPLIST_FILE = RyWebChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.n22.nwk.RyWebChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.n22.RyWebChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7e23f620-7594-4b39-bb91-f6e6ae9de03d";
+				PROVISIONING_PROFILE = "10922c98-1d37-4e92-b0a0-491e9c55c2cd";
 			};
 			name = Debug;
 		};
@@ -573,13 +578,15 @@
 			baseConfigurationReference = 3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 倪 文康 (4B4RHM3PEZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 倪 文康 (4B4RHM3PEZ)";
+				GCC_PREFIX_HEADER = "RyWebChat/RyChat-PrefixHeader.pch";
 				INFOPLIST_FILE = RyWebChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.n22.nwk.RyWebChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.n22.RyWebChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7e23f620-7594-4b39-bb91-f6e6ae9de03d";
+				PROVISIONING_PROFILE = "10922c98-1d37-4e92-b0a0-491e9c55c2cd";
 			};
 			name = Release;
 		};

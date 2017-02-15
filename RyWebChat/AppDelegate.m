@@ -20,12 +20,76 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[RCIM sharedRCIM] initWithAppKey:@"6tnym1br6tba7"];
+    [[RCIM sharedRCIM] initWithAppKey:@"pgyu6atqpg77u"];
     [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
+    //开启用户信息和群组信息的持久化
+    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+    [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
+    
     //设置Log级别，开发阶段打印详细log
-    [RCIMClient sharedRCIMClient].logLevel = RC_Log_Level_Info;
+//    [RCIMClient sharedRCIMClient].logLevel = RC_Log_Level_Info;
+    
+    /* 点击通知栏的远程推送时，如果此时 App 已经被系统冻结，则您在 AppDelegate 的 -application:didFinishLaunchingWithOptions: 中可以捕获该消息。
+     * 远程推送的内容
+     */
+//    NSDictionary *remoteNotificationUserInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    [self registerPush:application];
     
     return YES;
+}
+/**
+ * 推送处理1
+ * 注册推送
+ */
+- (void)registerPush:(UIApplication *)application {
+    
+    if ([application
+         respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        //注册推送, 用于iOS8以及iOS8之后的系统
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings
+                                                settingsForTypes:(UIUserNotificationTypeBadge |
+                                                                  UIUserNotificationTypeSound |
+                                                                  UIUserNotificationTypeAlert)
+                                                categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        //注册推送，用于iOS8之前的系统
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
+}
+
+/**
+ * 推送处理2
+ */
+//注册用户通知设置
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    // register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+/**
+ * 推送处理3
+ */
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+/**
+ *  如果 App 未被系统冻结，则您在 AppDelegate 的 -application:didReceiveRemoteNotification: 中可以捕获该消息。
+ */
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // userInfo为远程推送的内容
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
