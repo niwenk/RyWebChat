@@ -9,14 +9,11 @@
 #ifndef MAConfig_h
 #define MAConfig_h
 
-//#define MACLIENTSERVERADDR @"http://118.242.18.190/webchat/rcs" //服务器地址
-#define MACLIENTSERVERADDR @"http://192.168.2.80:8980/webchat/rcs" //服务器地址
+//#import "MAFNetworkingTool.h"
+//#import "MAHttpService.h"
+//#import "MAMessageUtils.h"
 
-//#define MARyAppKey @"pgyu6atqpg77u" //服务器
-#define MARyAppKey @"6tnym1br6tba7" //Lori
 
-static NSString *CHAT_TITLE = @"在线客服";
-static NSString *CHAT_TARGET_ID = @"EliteCRM";
 
 //-----websocket消息类型说明
 

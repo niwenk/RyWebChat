@@ -9,6 +9,7 @@
 #import "MAHttpService.h"
 #import "MAFNetworkingTool.h"
 #import "MAJSONObject.h"
+#import "MJExtension.h"
 
 @implementation MAHttpService
 

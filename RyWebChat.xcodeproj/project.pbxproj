@@ -54,6 +54,19 @@
 		A1F3995E1E5419A10082D513 /* MAMessageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399571E5419A10082D513 /* MAMessageUtils.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A168FC371E54621E00A313AB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3902B84CAA24AEBB509DDF6C /* Pods-RyWebChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.release.xcconfig"; sourceTree = "<group>"; };
 		A13A0D561E4D9632009E4B5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -370,6 +383,7 @@
 				A1431F351E4C0A6A001BF142 /* Resources */,
 				F357B5E73A408CD23ADC2737 /* [CP] Embed Pods Frameworks */,
 				101624627E9319B0B876822F /* [CP] Copy Pods Resources */,
+				A168FC371E54621E00A313AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

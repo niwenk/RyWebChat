@@ -7,11 +7,15 @@
 //
 
 #import "MARyChatViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 #import "EliteMessage.h"
 #import "MAChat.h"
 #import "MAJSONObject.h"
 #import "MARequest.h"
 #import "MASession.h"
+#import "MAEliteChat.h"
+#import "MAMessageUtils.h"
+#import "MAConfig.h"
 
 @interface MARyChatViewController ()<RCIMReceiveMessageDelegate>
 
@@ -26,6 +30,8 @@
     self.displayUserNameInCell = NO;
     
     [[RCIM sharedRCIM] setReceiveMessageDelegate:self];
+    
+    [[MAEliteChat shareEliteChat] sendQueueRequest];
     
 }
 
@@ -224,10 +230,11 @@
                 int noticeType = [msgDic getInt:@"noticeType"];
                 if(noticeType == MANORMAL) {
                     NSString *content = [msgDic getString:@"content"];
-                    EliteMessage *eliteMsg = (EliteMessage *)rcMsg.content;
-                    eliteMsg.message = content;
                     
-                    [self appendAndDisplayMessage:rcMsg];
+                    RCTextMessage *textMsg = [RCTextMessage messageWithContent:content];
+                    RCMessage *message = [[RCMessage alloc] initWithType:self.conversationType targetId:self.targetId direction:rcMsg.messageDirection messageId:rcMsg.messageId content:textMsg];
+                    
+                    [self appendAndDisplayMessage:message];
                 }
             }
         }

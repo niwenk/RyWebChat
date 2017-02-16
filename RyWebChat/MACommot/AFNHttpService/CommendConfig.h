@@ -9,7 +9,6 @@
 #ifndef CommendConfig_h
 #define CommendConfig_h
 
-#import "AFNetworking.h"
 #import "MAFNetworkingTool.h"
 
 #define SAVEDEFUAIL(obj,key) [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key]

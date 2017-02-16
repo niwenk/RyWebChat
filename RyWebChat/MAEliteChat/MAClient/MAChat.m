@@ -80,6 +80,11 @@ static MAChat *chat;
     return nil;
 }
 
+- (MAClient *)getClient {
+    
+    return self.client;
+}
+
 - (void)updateSession:(MAAgent *)agent {
     self.session.agent = agent;
 }

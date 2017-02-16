@@ -7,7 +7,7 @@
 //
 
 #import "MASessionTimeOut.h"
-#import <SystemConfiguration/SystemConfiguration.h>
+#import "AFNetworking.h"
 #import "CommendConfig.h"
 
 @interface MASessionTimeOut()<UIAlertViewDelegate>

@@ -7,7 +7,11 @@
 //
 
 #import "MAMessageUtils.h"
+#import <RongIMKit/RongIMKit.h>
+#import "MJExtension.h"
 #import "MAChat.h"
+#import "MAEliteChat.h"
+#import "MAConfig.h"
 
 @implementation MAMessageUtils
 /**

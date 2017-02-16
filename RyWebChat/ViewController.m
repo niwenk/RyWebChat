@@ -14,6 +14,8 @@
 #import "MAClient.h"
 #import "MAEliteChat.h"
 
+#define MACLIENTSERVERADDR @"http://118.242.18.190/webchat/rcs" //服务器地址
+//#define MACLIENTSERVERADDR @"http://192.168.2.80:8980/webchat/rcs" //服务器地址
 
 @interface ViewController ()
 
@@ -26,8 +28,7 @@
 }
 - (IBAction)webChatPressed:(id)sender {
     
-    [MAEliteChat initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"" queueId:1 complete:^(BOOL result) {
-        
+    [[MAEliteChat shareEliteChat] initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"" queueId:1 complete:^(BOOL result) {
         if (result) [self switchChatViewController];
         else NSLog(@"初始化或启动失败");
     }];

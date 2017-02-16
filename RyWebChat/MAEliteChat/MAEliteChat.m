@@ -7,11 +7,13 @@
 //
 
 #import "MAEliteChat.h"
+#import <RongIMKit/RongIMKit.h>
 #import "MAMessageUtils.h"
 #import "MAChat.h"
 #import "EliteMessage.h"
+#import "MAHttpService.h"
 
-@interface MAEliteChat()
+@interface MAEliteChat()<RCIMUserInfoDataSource>
 
 @property (assign, nonatomic) int queueId;//排队号;
 @property (assign, nonatomic) BOOL initialized;
@@ -32,72 +34,82 @@ static MAEliteChat *eliteChat=nil;
     return eliteChat;
 }
 
-+ (instancetype)initAndStart:(NSString *)serverAddr userId:(NSString *)userId name:(NSString *)name portraitUri:(NSString *)portraitUri queueId:(int)queueId complete:(void (^)(BOOL result))complete {
+- (void)startRyWithAppKey:(NSString *)key {
+    [[RCIM sharedRCIM] initWithAppKey:key];
     
-    [MAEliteChat shareEliteChat];
+    [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
+    //开启用户信息和群组信息的持久化
+    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
     
-    MAClient *client = [MAClient initWithServerAddr:serverAddr name:name userId:userId portraitUri:portraitUri];
+    [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
     
-    [[MAChat getInstance] setClient:client];
-    
-    eliteChat.queueId = queueId;
-    eliteChat.startChatReady = YES;
-    
-    [eliteChat contentRyTokenService:serverAddr userId:userId nickName:name protrait:portraitUri complete:^(NSString *token) {
-        
-        if (isEliteEmpty(token)) {
-            complete(NO);
-        } else {
-            [[MAChat getInstance] setTokenStr:token];
-            
-            eliteChat.initialized = YES;
-            
-            [self startChat:queueId complete:^{
-                complete(YES);
-            }];
-        }
-    }];
-    
-    return eliteChat;
+    [[RCIM sharedRCIM] setUserInfoDataSource:self];
 }
 
-+ (instancetype)initElite:(NSString *)serverAddr userId:(NSString *)userId name:(NSString *)name portraitUri:(NSString *)portraitUri complete:(void (^)(BOOL result))complete {
-    
-    [MAEliteChat shareEliteChat];
+- (void)initAndStart:(NSString *)serverAddr userId:(NSString *)userId name:(NSString *)name portraitUri:(NSString *)portraitUri queueId:(int)queueId complete:(void (^)(BOOL result))complete {
     
     MAClient *client = [MAClient initWithServerAddr:serverAddr name:name userId:userId portraitUri:portraitUri];
-    
+
     [[MAChat getInstance] setClient:client];
     
-    [eliteChat contentRyTokenService:serverAddr userId:userId nickName:name protrait:portraitUri complete:^(NSString *token) {
+    self.queueId = queueId;
+    
+    self.initialized = YES;
+    
+    [self startChat:^(NSString *tokenStr) {
         
-        if (isEliteEmpty(token)) {
+        if (isEliteEmpty(tokenStr)) {
             complete(NO);
         } else {
-            [[MAChat getInstance] setTokenStr:token];
-            
-            eliteChat.initialized = YES;
             complete(YES);
         }
     }];
     
-    return eliteChat;
 }
 
-+ (void)startChat:(int)queueId complete:(void (^)())complete {
-    if (!eliteChat) {
-        NSLog(@"未初始化");
-        return;
+- (void)initElite:(NSString *)serverAddr userId:(NSString *)userId name:(NSString *)name portraitUri:(NSString *)portraitUri queueId:(int)queueId {
+    
+    MAClient *client = [MAClient initWithServerAddr:serverAddr name:name userId:userId portraitUri:portraitUri];
+    
+    [[MAChat getInstance] setClient:client];
+    
+    self.queueId = queueId;
+    
+    self.initialized = YES;
+}
+
+- (void)startChat:(void (^)(NSString *tokenStr))complete {
+    
+    MAClient *client = [[MAChat getInstance] getClient];
+    
+    if (!client) {
+        NSLog(@"初始化失败");
+        complete(nil);
     }
     
-    eliteChat.queueId = queueId;
+    [self contentRyTokenService:client.serverAddr userId:client.userId nickName:client.name protrait:client.portraitUri complete:^(NSString *token) {
+        
+        if (isEliteEmpty(token)) {
+            complete(nil);
+        } else {
+            [[MAChat getInstance] setTokenStr:token];
+            
+            self.startChatReady = YES;
+            
+            complete(token);
+        }
+    }];
+}
+
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
     
-    if (eliteChat.initialized) {
-        //发出聊天排队请求
-        [MAMessageUtils sendChatRequest:queueId from:@"APP"];
-        //启动聊天会话界面
-        complete();
-    }
+    NSLog(@"----%@",userId);
+    
+    MAAgent *agent = [[MAChat getInstance] getCurrentAgent];
+    
+    RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:agent.userId name:agent.name portrait:agent.portraitUri];
+    
+    completion(user);
 }
 
 - (void)contentRyTokenService:(NSString *)serverAddr userId:(NSString *)userId nickName:(NSString *)nickName protrait:(NSString *)portraitUri complete:(void (^)(NSString *token))complete  {
@@ -133,6 +145,22 @@ static MAEliteChat *eliteChat=nil;
         NSLog(@"error:%@",error);
         complete(nil);
     }];
+}
+/**
+ *  发出聊天排队请求
+ *
+ *  @param queueId 队列号
+ */
+- (void)sendQueueRequest {
+    if (self.startChatReady) {
+        [MAMessageUtils sendChatRequest:self.queueId from:@"APP"];
+    } else {
+        NSLog(@"未启动sdk");
+    }
+}
+
+- (void)setDeviceToken:(NSString *)token {
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
 }
 
 - (void)loginSuccess:(NSString *)userName

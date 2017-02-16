@@ -27,6 +27,7 @@
 
 - (long)getRequestId;
 - (long)getSessionId;
+- (MAClient *)getClient;
 - (MAAgent *)getCurrentAgent;
 - (NSDictionary *)getAgentWithId:(NSString *)agentId;
 

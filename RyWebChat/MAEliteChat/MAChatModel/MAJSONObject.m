@@ -7,6 +7,7 @@
 //
 
 #import "MAJSONObject.h"
+#import "MJExtension.h"
 
 @interface MAJSONObject()
 

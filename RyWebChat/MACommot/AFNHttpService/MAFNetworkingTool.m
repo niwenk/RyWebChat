@@ -7,6 +7,7 @@
 //
 
 #import "MAFNetworkingTool.h"
+#import "AFNetworking.h"
 #import "CommendConfig.h"
 #define NetWorkNotReachableErrorInfo @"网络连线错误，请检查网络连线设定！"
 

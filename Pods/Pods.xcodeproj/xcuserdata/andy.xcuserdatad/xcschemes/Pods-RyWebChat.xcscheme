@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '79439447E397146DC9E0EC2CE7A19094'
+               BlueprintIdentifier = '9682960B1827789B92A621471EA9749A'
                BlueprintName = 'Pods-RyWebChat'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-RyWebChat.a'>

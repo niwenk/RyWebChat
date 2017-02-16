@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <RongIMKit/RongIMKit.h>
-#import "MAHttpService.h"
-#import "EliteMessage.h"
-#import "MAChat.h"
+#import "MAEliteChat.h"
 
-@interface AppDelegate ()<RCIMUserInfoDataSource>
+#define MARyAppKey @"pgyu6atqpg77u" //服务器
+//#define MARyAppKey @"6tnym1br6tba7" //Lori
+
+@interface AppDelegate ()
 
 @end
 
@@ -21,16 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[RCIM sharedRCIM] initWithAppKey:MARyAppKey];
     
-    [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
-    //开启用户信息和群组信息的持久化
-    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+    [[MAEliteChat shareEliteChat] startRyWithAppKey:MARyAppKey];
     
-    [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
-    
-    
-    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+//    [[RCIM sharedRCIM] initWithAppKey:MARyAppKey];
+//    
+//    [[RCIM sharedRCIM] registerMessageType:[EliteMessage class]];
+//    //开启用户信息和群组信息的持久化
+//    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+//    
+//    [RCIM sharedRCIM].enableMessageAttachUserInfo = YES;
+//    
+//    [[RCIM sharedRCIM] setUserInfoDataSource:self];
     
     //设置Log级别，开发阶段打印详细log
 //    [RCIMClient sharedRCIMClient].logLevel = RC_Log_Level_Info;
@@ -44,16 +46,7 @@
     
     return YES;
 }
-- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
-    
-    NSLog(@"----%@",userId);
-    
-    MAAgent *agent = [[MAChat getInstance] getCurrentAgent];
-    
-    RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:agent.userId name:agent.name portrait:agent.portraitUri];
-    
-    completion(user);
-}
+
 
 /**
  * 推送处理1
@@ -100,7 +93,7 @@
      stringByReplacingOccurrencesOfString:@" "
      withString:@""];
     
-    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+    [[MAEliteChat shareEliteChat] setDeviceToken:token];
 }
 /**
  *  如果 App 未被系统冻结，则您在 AppDelegate 的 -application:didReceiveRemoteNotification: 中可以捕获该消息。
