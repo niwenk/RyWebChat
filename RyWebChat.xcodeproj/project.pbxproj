@@ -12,7 +12,6 @@
 		A1431F3F1E4C0A6A001BF142 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */; };
 		A1431F421E4C0A6A001BF142 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1431F411E4C0A6A001BF142 /* ViewController.m */; };
 		A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1431F431E4C0A6A001BF142 /* Main.storyboard */; };
-		A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1431F461E4C0A6A001BF142 /* Assets.xcassets */; };
 		A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1431F481E4C0A6A001BF142 /* LaunchScreen.storyboard */; };
 		A1431F521E4C0C17001BF142 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F511E4C0C17001BF142 /* AssetsLibrary.framework */; };
 		A1431F541E4C0C1D001BF142 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1431F531E4C0C1D001BF142 /* AudioToolbox.framework */; };
@@ -53,6 +52,7 @@
 		A1F3995C1E5419A10082D513 /* MAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399511E5419A10082D513 /* MAClient.m */; };
 		A1F3995D1E5419A10082D513 /* MAEliteChat.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399541E5419A10082D513 /* MAEliteChat.m */; };
 		A1F3995E1E5419A10082D513 /* MAMessageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F399571E5419A10082D513 /* MAMessageUtils.m */; };
+		AC7784C11E5AC3470072A385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7784C01E5AC3470072A385 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +79,6 @@
 		A1431F401E4C0A6A001BF142 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A1431F411E4C0A6A001BF142 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A1431F441E4C0A6A001BF142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A1431F461E4C0A6A001BF142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1431F491E4C0A6A001BF142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1431F4B1E4C0A6A001BF142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1431F511E4C0C17001BF142 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -140,6 +139,7 @@
 		A1F399561E5419A10082D513 /* MAMessageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMessageUtils.h; sourceTree = "<group>"; };
 		A1F399571E5419A10082D513 /* MAMessageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMessageUtils.m; sourceTree = "<group>"; };
 		A2D949C3E5F6BEDA70379934 /* libPods-RyWebChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RyWebChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7784C01E5AC3470072A385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F557F79445B3893E4B491F15 /* Pods-RyWebChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RyWebChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RyWebChat/Pods-RyWebChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,8 +247,8 @@
 				A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */,
 				A1431F401E4C0A6A001BF142 /* ViewController.h */,
 				A1431F411E4C0A6A001BF142 /* ViewController.m */,
+				AC7784C01E5AC3470072A385 /* Assets.xcassets */,
 				A1431F431E4C0A6A001BF142 /* Main.storyboard */,
-				A1431F461E4C0A6A001BF142 /* Assets.xcassets */,
 				A1431F481E4C0A6A001BF142 /* LaunchScreen.storyboard */,
 				A1431F4B1E4C0A6A001BF142 /* Info.plist */,
 				A1431F3A1E4C0A6A001BF142 /* Supporting Files */,
@@ -438,7 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */,
-				A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */,
+				AC7784C11E5AC3470072A385 /* Assets.xcassets in Resources */,
 				A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
