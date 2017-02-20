@@ -18,8 +18,9 @@
 #import "MAConfig.h"
 #import "MJExtension.h"
 #import "MASaveMessage.h"
+#import "MASatisfactionView.h"
 
-@interface MARyChatViewController ()<RCIMReceiveMessageDelegate>
+@interface MARyChatViewController ()<RCIMReceiveMessageDelegate,MASatisfactionViewDelegate>
 
 @end
 
@@ -245,8 +246,7 @@
             break;
         case MAAGENT_PUSH_RATING://坐席推送了满意度
             NSLog(@"坐席推送了满意度");
-            
-            
+            [self pushSatisfactionView];
             
             break;
         case MAAGENT_UPDATED://坐席人员变更
@@ -333,8 +333,59 @@
             [[MAChat getInstance] updateUnsendMessage:array];
         } error:nil];
     }
+}
+/**
+ *  满意度评价
+ *
+ *  @param ratingId 满意1 不满意0
+ *  @param comment  描述
+ */
+- (void)sendRating:(NSInteger)ratingId comment:(NSString *)comment {
+    EliteMessage *message = [EliteMessage messageWithContent:@""];
+    NSMutableDictionary *extra = [NSMutableDictionary dictionary];
+    extra[@"type"] = @(MARATE_SESSION);
+    extra[@"token"] = [MAChat getInstance].tokenStr;//登录成功后获取到的凭据
+    extra[@"sessionId"] = @([[MAChat getInstance] getSessionId]);//聊天会话号，排队成功后返回
+    extra[@"ratingId"] = @(ratingId);
+    extra[@"ratingComments"] = comment?comment:@"";
     
+     message.extra = [extra mj_JSONString];
     
+    [[RCIM sharedRCIM] sendMessage:ConversationType_SYSTEM targetId:self.targetId content:message pushContent:nil pushData:nil success:nil error:nil];
+}
+/**
+ *  推送满意度评价
+ */
+- (void)pushSatisfactionView {
+    
+    // 主线程执行：
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!self.satisfactionView) {
+            self.satisfactionView = [MASatisfactionView newSatisfactionView:self];
+        }
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:self.satisfactionView];
+    });
+}
+#define mark 满意评价 回调函数
+/**
+ *  满意评价
+ *
+ *  @param comment  备注
+ *  @param ratingId 0 不满意 1 满意
+ */
+- (void)satisfactionView:(NSString *)comment sureEvent:(NSInteger)ratingId {
+    NSLog(@"---满意评价：%@",comment);
+    
+    [self sendRating:ratingId comment:comment];
+    
+    NSString *tips = [NSString stringWithFormat:@"您的评价是【%@】",ratingId==0?@"不满意":@"满意"];
+    
+    [self addTipsMessage:tips];
+    
+    [self.satisfactionView removeFromSuperview];
+    
+    self.satisfactionView = nil;
 }
 
 - (void)didReceiveMemoryWarning {

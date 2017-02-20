@@ -9,5 +9,7 @@
 #import <RongIMKit/RongIMKit.h>
 
 @interface MARyChatViewController : RCConversationViewController
+//满意度评价视图
+@property (strong, nonatomic) UIView *satisfactionView;
 
 @end

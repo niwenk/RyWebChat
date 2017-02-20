@@ -45,6 +45,7 @@
 		A1CFF3E31E5AC1D500846381 /* MASatisfactionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CFF3E21E5AC1D500846381 /* MASatisfactionView.m */; };
 		A1CFF3E61E5ACD6800846381 /* RadioButton-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CFF3E41E5ACD6800846381 /* RadioButton-Selected.png */; };
 		A1CFF3E71E5ACD6800846381 /* RadioButton-Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CFF3E51E5ACD6800846381 /* RadioButton-Unselected.png */; };
+		A1CFF3E91E5AD9F900846381 /* MABg_default.png in Resources */ = {isa = PBXBuildFile; fileRef = A1CFF3E81E5AD9F900846381 /* MABg_default.png */; };
 		A1EDE1861E54490700F9904D /* MARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE1851E54490700F9904D /* MARequest.m */; };
 		A1EDE1891E544ADA00F9904D /* MASession.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE1881E544ADA00F9904D /* MASession.m */; };
 		A1EDE18C1E544B4E00F9904D /* MAAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EDE18B1E544B4E00F9904D /* MAAgent.m */; };
@@ -122,6 +123,7 @@
 		A1CFF3E21E5AC1D500846381 /* MASatisfactionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASatisfactionView.m; sourceTree = "<group>"; };
 		A1CFF3E41E5ACD6800846381 /* RadioButton-Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RadioButton-Selected.png"; sourceTree = "<group>"; };
 		A1CFF3E51E5ACD6800846381 /* RadioButton-Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RadioButton-Unselected.png"; sourceTree = "<group>"; };
+		A1CFF3E81E5AD9F900846381 /* MABg_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MABg_default.png; sourceTree = "<group>"; };
 		A1EDE1841E54490700F9904D /* MARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARequest.h; sourceTree = "<group>"; };
 		A1EDE1851E54490700F9904D /* MARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARequest.m; sourceTree = "<group>"; };
 		A1EDE1871E544ADA00F9904D /* MASession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASession.h; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				A1431F3E1E4C0A6A001BF142 /* AppDelegate.m */,
 				A1431F401E4C0A6A001BF142 /* ViewController.h */,
 				A1431F411E4C0A6A001BF142 /* ViewController.m */,
+				A1CFF3E81E5AD9F900846381 /* MABg_default.png */,
 				A1CFF3E41E5ACD6800846381 /* RadioButton-Selected.png */,
 				A1CFF3E51E5ACD6800846381 /* RadioButton-Unselected.png */,
 				A1431F431E4C0A6A001BF142 /* Main.storyboard */,
@@ -459,6 +462,7 @@
 			files = (
 				A1CFF3E71E5ACD6800846381 /* RadioButton-Unselected.png in Resources */,
 				A1CFF3E61E5ACD6800846381 /* RadioButton-Selected.png in Resources */,
+				A1CFF3E91E5AD9F900846381 /* MABg_default.png in Resources */,
 				A1431F4A1E4C0A6A001BF142 /* LaunchScreen.storyboard in Resources */,
 				A1431F471E4C0A6A001BF142 /* Assets.xcassets in Resources */,
 				A1431F451E4C0A6A001BF142 /* Main.storyboard in Resources */,

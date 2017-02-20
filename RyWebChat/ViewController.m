@@ -29,13 +29,10 @@
 }
 - (IBAction)webChatPressed:(id)sender {
     
-    UIView *view = [MASatisfactionView newSatisfactionView];    
-    [self.view addSubview:view];
-    
-//    [[MAEliteChat shareEliteChat] initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"" queueId:1 complete:^(BOOL result) {
-//        if (result) [self switchChatViewController];
-//        else NSLog(@"初始化或启动失败");
-//    }];
+    [[MAEliteChat shareEliteChat] initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"" queueId:1 complete:^(BOOL result) {
+        if (result) [self switchChatViewController];
+        else NSLog(@"初始化或启动失败");
+    }];
 }
 
 - (void)switchChatViewController {
