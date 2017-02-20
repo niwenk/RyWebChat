@@ -107,5 +107,15 @@ typedef enum {
     MATRANSFER_NOTICE = 11
 }MANoticeMessageType;
 
+static NSString *TXT_MSG = @"RC:TxtMsg";
+static NSString *INFO_NTF = @"RC:InfoNtf";
+static NSString *PROFILE_NTF = @"RC:ProfileNtf";
+static NSString *CS_HS = @"RC:CsHs";
+static NSString *VC_MSG = @"RC:VcMsg";
+static NSString *LBS_MSG = @"RC:LBSMsg";
+static NSString *IMG_MSG = @"RC:ImgMsg";
+static NSString *FILE_MSG = @"RC:FileMsg";
+static NSString *ELITE_MSG = @"E:Msg";
+
 
 #endif /* MAConfig_h */

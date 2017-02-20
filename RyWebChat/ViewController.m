@@ -14,8 +14,8 @@
 #import "MAClient.h"
 #import "MAEliteChat.h"
 
-#define MACLIENTSERVERADDR @"http://118.242.18.190/webchat/rcs" //服务器地址
-//#define MACLIENTSERVERADDR @"http://192.168.2.80:8980/webchat/rcs" //服务器地址
+//#define MACLIENTSERVERADDR @"http://118.242.18.190/webchat/rcs" //服务器地址
+#define MACLIENTSERVERADDR @"http://192.168.2.80:8980/webchat/rcs" //服务器地址
 
 @interface ViewController ()
 

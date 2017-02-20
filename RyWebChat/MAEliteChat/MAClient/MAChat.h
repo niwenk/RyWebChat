@@ -11,6 +11,7 @@
 #import "MAClient.h"
 #import "MARequest.h"
 #import "MASession.h"
+#import "MASaveMessage.h"
 
 @interface MAChat : NSObject
 
@@ -30,6 +31,32 @@
 - (MAClient *)getClient;
 - (MAAgent *)getCurrentAgent;
 - (NSDictionary *)getAgentWithId:(NSString *)agentId;
-
+/**
+ *  更新坐席信息
+ *
+ *  @param agent 坐席信息
+ */
 - (void)updateSession:(MAAgent *)agent;
+/**
+ *  保存未发送消息
+ *
+ *  @param message 未发送的消息
+ */
+- (void)addUnsendMessage:(MASaveMessage *)message;
+/**
+ *  清除request和session
+ */
++ (void)clearRequestAndSession;
+/**
+ *  获取未发送消息集合
+ *
+ *  @return 消息集合
+ */
+- (NSMutableArray *)getUnsendMessage;
+/**
+ *  更新未发送的消息
+ *
+ *  @param array 消息集合
+ */
+- (void)updateUnsendMessage:(NSArray *)array;
 @end

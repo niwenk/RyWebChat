@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "MAEliteChat.h"
 
-#define MARyAppKey @"pgyu6atqpg77u" //服务器
-//#define MARyAppKey @"6tnym1br6tba7" //Lori
+//#define MARyAppKey @"pgyu6atqpg77u" //服务器
+#define MARyAppKey @"6tnym1br6tba7" //Lori
 
 @interface AppDelegate ()
 

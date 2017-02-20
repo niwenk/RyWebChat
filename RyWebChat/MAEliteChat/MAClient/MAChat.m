@@ -7,6 +7,8 @@
 //
 
 #import "MAChat.h"
+#import <RongIMKit/RongIMKit.h>
+#import "MJExtension.h"
 
 @interface MAChat()
 @property (strong, nonatomic) MAClient *client;
@@ -87,5 +89,56 @@ static MAChat *chat;
 
 - (void)updateSession:(MAAgent *)agent {
     self.session.agent = agent;
+}
+
+
+- (void)addUnsendMessage:(MASaveMessage *)message {
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    [MAUnsendMessageArray mj_setupObjectClassInArray:^NSDictionary *{
+        return @{@"messages":@"MASaveMessage"};
+    }];
+    
+    MAUnsendMessageArray *unsendMsg = [MAUnsendMessageArray mj_objectWithKeyValues:[userDefault objectForKey:@"unsendMsg"]];
+    
+    if (unsendMsg.messages) {
+        [unsendMsg.messages addObject:message];
+    } else {
+        unsendMsg = [MAUnsendMessageArray new];
+        unsendMsg.messages = [NSMutableArray arrayWithObject:message];
+    }
+    
+    [userDefault setObject:[unsendMsg mj_JSONString] forKey:@"unsendMsg"];
+}
+
+- (NSMutableArray *)getUnsendMessage {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [MAUnsendMessageArray mj_setupObjectClassInArray:^NSDictionary *{
+        return @{@"messages":@"MASaveMessage"};
+    }];
+    MAUnsendMessageArray *msg = [MAUnsendMessageArray mj_objectWithKeyValues:[userDefault objectForKey:@"unsendMsg"]];
+    
+    return msg.messages;
+}
+
+- (void)updateUnsendMessage:(NSArray *)array {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if (!array) [userDefault removeObjectForKey:@"unsendMsg"];
+    MAUnsendMessageArray *unsendMsg = [MAUnsendMessageArray new];
+    
+    unsendMsg.messages = [NSMutableArray arrayWithArray:array];
+    
+    [userDefault setObject:[unsendMsg mj_JSONString] forKey:@"unsendMsg"];
+}
+
++ (void)clearRequestAndSession {
+    if (chat.request) {
+        chat.request = nil;
+    }
+    
+    if (chat.session) {
+        chat.session = nil;
+    }
 }
 @end

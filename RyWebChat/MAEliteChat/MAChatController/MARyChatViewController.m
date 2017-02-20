@@ -16,6 +16,8 @@
 #import "MAEliteChat.h"
 #import "MAMessageUtils.h"
 #import "MAConfig.h"
+#import "MJExtension.h"
+#import "MASaveMessage.h"
 
 @interface MARyChatViewController ()<RCIMReceiveMessageDelegate>
 
@@ -157,6 +159,41 @@
             break;
         case MASEND_CHAT_MESSAGE: //客户端发送的消息
             NSLog(@"客户端发送的消息");
+            //TODO 当收到发送的消息返回session不合法时候，认为服务端会话已经关闭了，而客户端由于某些原因没能收到关闭信息
+            //TODO 这时候也去清空会话，并且把原始消息缓存起来，同时发出聊天排队请求
+            int result = [json getInt:@"result"];
+            if(result == MAINVAILD_CHAT_SESSION_ID) {
+                [MAChat clearRequestAndSession];
+                
+                NSDictionary *originalMessage = [json getObject:@"originalMessage"];
+                NSString *objectName = [originalMessage getString:@"objectName"];
+
+                MASaveMessage *saveUnmsg = nil;
+                if([objectName isEqual:TXT_MSG]) {
+                    
+                    saveUnmsg = [MASaveMessage saveMessageWithText:originalMessage];
+                    
+                } else if ([objectName isEqual:IMG_MSG]) {
+                    
+                    saveUnmsg = [MASaveMessage saveMessageWithImage:originalMessage];
+                    
+                } else if ([objectName isEqual:FILE_MSG]) {
+                    
+                } else if ([objectName isEqual:LBS_MSG]) {
+                    
+                    saveUnmsg = [MASaveMessage saveMessageWithLocation:originalMessage];
+                    
+                } else if ([objectName isEqual:VC_MSG]) {
+                    
+                    saveUnmsg = [MASaveMessage saveMessageWithVoice:originalMessage];
+                    
+                }
+                if(saveUnmsg != nil){
+                    [[MAChat getInstance] addUnsendMessage:saveUnmsg];
+                }
+                
+                [[MAEliteChat shareEliteChat] sendQueueRequest];
+            }
             
             break;
         case MASEND_PRE_CHAT_MESSAGE: //发送预消息（还没排完队时候的消息）
@@ -168,8 +205,9 @@
         case MACHAT_REQUEST_STATUS_UPDATE://聊天排队状态更新
             NSLog(@"聊天排队状态更新");
         {
-            int requestStatus = [json getInt:@"requestStatus"];
-            int queueLength = [json getInt:@"queueLength"];
+            NSDictionary *dic = [json getObject:@"data"];
+            int requestStatus = [dic getInt:@"requestStatus"];
+            int queueLength = [dic getInt:@"queueLength"];
             NSString *content = nil;
             if(requestStatus == MAWAITING){
                 content = [NSString stringWithFormat:@"还有%d位，等待中...",queueLength];
@@ -180,9 +218,8 @@
                 content = @"排队超时";
             }
             if (content) [self addTipsMessage:content];
+            
         }
-            
-            
             break;
         case MACHAT_STARTED://通知客户端可以开始聊天
         {
@@ -202,6 +239,8 @@
             
             NSString *tipsMsg = [NSString stringWithFormat:@"坐席[%@]为您服务",agent.name];
             [self addTipsMessage:tipsMsg];
+            
+            [self sendUnsendMessages];
         }
             break;
         case MAAGENT_PUSH_RATING://坐席推送了满意度
@@ -218,7 +257,7 @@
             NSLog(@"坐席关闭");
             [self addTipsMessage:@"会话结束"];
             
-            [self isEnableInputBarControl:NO];
+            
             
             break;
         case MAAGENT_SEND_MESSAGE://坐席发送消息
@@ -251,6 +290,51 @@
  */
 - (void)isEnableInputBarControl:(BOOL)enable {
     self.chatSessionInputBarControl.userInteractionEnabled = enable;
+}
+/**
+ * 发送之前未送达的消,当排队之前发出的消息,会先缓存起来，如果排上队了，就会补发这些消息
+ */
+- (void)sendUnsendMessages {
+    
+    NSMutableArray *array = [[MAChat getInstance] getUnsendMessage];
+    
+    NSArray *tempArray = [NSArray arrayWithArray:array];
+    
+    for (MASaveMessage *message in tempArray) {
+        
+        id content = [message.contentDic getString:@"content"];
+        
+        NSMutableDictionary *extra = [NSMutableDictionary dictionary];
+        EliteMessage *messageContent = [EliteMessage messageWithContent:content];
+        extra[@"type"] = @(MASEND_CHAT_MESSAGE);
+        extra[@"token"] = [MAChat getInstance].tokenStr;//登录成功后获取到的凭据
+        extra[@"sessionId"] = @([[MAChat getInstance] getSessionId]);//聊天会话号，排队成功后返回
+        
+        if ([message.objectName isEqual:TXT_MSG]) {
+            extra[@"messageType"] = @(MATEXT);
+        } else if ([message.objectName isEqual:IMG_MSG]) {
+            extra[@"imageUri"] = [message.contentDic getString:@"imageUri"];
+            extra[@"messageType"] = @(MAIMG);
+        } else if ([message.objectName isEqual:VC_MSG]) {
+            extra[@"length"] = [message.contentDic getString:@"duration"];
+            extra[@"messageType"] = @(MAVOICE);
+        } else if ([message.objectName isEqual:LBS_MSG]) {
+            extra[@"latitude"] = [message.contentDic getString:@"latitude"];
+            extra[@"longitude"] = [message.contentDic getString:@"longitude"];
+            extra[@"poi"] = [message.contentDic getString:@"poi"];
+            extra[@"imgUri"] = [message.contentDic getString:@"imgUri"];
+            extra[@"messageType"] = @(MALOCATION);
+        }
+        
+        messageContent.extra = [extra mj_JSONString];
+        
+        [[RCIM sharedRCIM] sendMessage:ConversationType_SYSTEM targetId:self.targetId content:messageContent pushContent:nil pushData:nil success:^(long messageId) {
+            [array removeObject:message];
+            [[MAChat getInstance] updateUnsendMessage:array];
+        } error:nil];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
