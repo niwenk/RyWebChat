@@ -19,8 +19,9 @@
 #import "MJExtension.h"
 #import "MASaveMessage.h"
 #import "MASatisfactionView.h"
+#import "MALocationViewController.h"
 
-@interface MARyChatViewController ()<RCIMReceiveMessageDelegate,MASatisfactionViewDelegate>
+@interface MARyChatViewController ()<RCIMReceiveMessageDelegate,MASatisfactionViewDelegate,MALocationDelegate>
 
 @end
 
@@ -386,6 +387,38 @@
     [self.satisfactionView removeFromSuperview];
     
     self.satisfactionView = nil;
+}
+
+//- (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag{
+//    
+//    switch (tag) {
+//            
+//        case  PLUGIN_BOARD_ITEM_LOCATION_TAG : {
+//            
+//            NSLog(@"---地图");
+//            
+//            // 主线程执行：
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                MALocationViewController *locationController = [MALocationViewController new];
+//                locationController.delegate = self;
+//                [self presentViewController:locationController animated:YES completion:nil];
+//                
+//            });
+//            
+//            
+//            break;
+//        }
+//        default:
+//            
+//            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+//            
+//            break;
+//            
+//    }
+//}
+
+-(void)sendlocation:(CLLocationCoordinate2D)coordinate title:(NSString *)title detail:(NSString *)detail image:(UIImage *)image {
+    
 }
 
 - (void)didReceiveMemoryWarning {

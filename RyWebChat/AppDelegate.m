@@ -8,11 +8,15 @@
 
 #import "AppDelegate.h"
 #import "MAEliteChat.h"
+#import <BaiduMapAPI_Base/BMKMapManager.h>
 
 //#define MARyAppKey @"pgyu6atqpg77u" //服务器
 #define MARyAppKey @"6tnym1br6tba7" //Lori
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BMKGeneralDelegate>
+{
+    BMKMapManager* _mapManager;
+}
 
 @end
 
@@ -23,6 +27,12 @@
     // Override point for customization after application launch.
     
     [[MAEliteChat shareEliteChat] startRyWithAppKey:MARyAppKey];
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"mHHdQoUBC1TZSfDGRcoUHdlk"  generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
 //    [[RCIM sharedRCIM] initWithAppKey:MARyAppKey];
 //    
@@ -47,7 +57,9 @@
     return YES;
 }
 
-
+- (void)onGetPermissionState:(int)iError {
+    NSLog(@"%d",iError);
+}
 /**
  * 推送处理1
  * 注册推送

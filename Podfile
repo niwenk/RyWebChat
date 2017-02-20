@@ -4,5 +4,7 @@ target 'RyWebChat' do
     pod "RongCloudIM/IMKit"
     pod "AFNetworking"
     pod "MJExtension"
+    pod "BaiduMapKit"
+    pod "Masonry"
 end
 

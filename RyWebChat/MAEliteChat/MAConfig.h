@@ -117,5 +117,8 @@ static NSString *IMG_MSG = @"RC:ImgMsg";
 static NSString *FILE_MSG = @"RC:FileMsg";
 static NSString *ELITE_MSG = @"E:Msg";
 
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define MAChatMsgBundle   @"MAChatMsg.bundle"
+#define MAChatMsgBundleName(imageName)  [MAChatMsgBundle stringByAppendingPathComponent:imageName]
 
 #endif /* MAConfig_h */
