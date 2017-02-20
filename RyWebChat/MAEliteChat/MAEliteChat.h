@@ -42,7 +42,7 @@ static NSString *CHAT_TARGET_ID = @"EliteCRM";
  * 启动聊天
  * @param complete 回调
  */
-- (void)startChat:(void (^)(NSString *tokenStr))complete;
+- (void)startChat:(void (^)(BOOL result))complete;
 /**
  *  设备的token
  *

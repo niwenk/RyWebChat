@@ -56,14 +56,7 @@ static MAEliteChat *eliteChat=nil;
     
     self.initialized = YES;
     
-    [self startChat:^(NSString *tokenStr) {
-        
-        if (isEliteEmpty(tokenStr)) {
-            complete(NO);
-        } else {
-            complete(YES);
-        }
-    }];
+    [self startChat:complete];
     
 }
 
@@ -78,7 +71,7 @@ static MAEliteChat *eliteChat=nil;
     self.initialized = YES;
 }
 
-- (void)startChat:(void (^)(NSString *tokenStr))complete {
+- (void)startChat:(void (^)(BOOL result))complete {
     
     MAClient *client = [[MAChat getInstance] getClient];
     
@@ -90,13 +83,13 @@ static MAEliteChat *eliteChat=nil;
     [self contentRyTokenService:client.serverAddr userId:client.userId nickName:client.name protrait:client.portraitUri complete:^(NSString *token) {
         
         if (isEliteEmpty(token)) {
-            complete(nil);
+            complete(NO);
         } else {
             [[MAChat getInstance] setTokenStr:token];
             
             self.startChatReady = YES;
             
-            complete(token);
+            complete(YES);
         }
     }];
 }
