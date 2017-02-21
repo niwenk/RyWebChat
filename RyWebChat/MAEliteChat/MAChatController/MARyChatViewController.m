@@ -20,6 +20,7 @@
 #import "MASaveMessage.h"
 #import "MASatisfactionView.h"
 #import "MALocationViewController.h"
+#import "MALocationDetailController.h"
 
 @interface MARyChatViewController ()<RCIMReceiveMessageDelegate,MASatisfactionViewDelegate,MALocationDelegate>
 
@@ -389,36 +390,59 @@
     self.satisfactionView = nil;
 }
 
-//- (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag{
-//    
-//    switch (tag) {
-//            
-//        case  PLUGIN_BOARD_ITEM_LOCATION_TAG : {
-//            
-//            NSLog(@"---地图");
-//            
-//            // 主线程执行：
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                MALocationViewController *locationController = [MALocationViewController new];
-//                locationController.delegate = self;
-//                [self presentViewController:locationController animated:YES completion:nil];
-//                
-//            });
-//            
-//            
-//            break;
-//        }
-//        default:
-//            
-//            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
-//            
-//            break;
-//            
-//    }
-//}
+- (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag{
+    
+    switch (tag) {
+            
+        case  PLUGIN_BOARD_ITEM_LOCATION_TAG : {
+            
+            if (self.mapType == MAMAPTYPE_Baidu) {
+                // 主线程执行：
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    MALocationViewController *locationController = [MALocationViewController new];
+                    locationController.delegate = self;
+                    [self presentViewController:locationController animated:YES completion:nil];
+                    
+                });
+                break;
+            }
+        }
+        default:
+            
+            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+            
+            break;
+            
+    }
+}
 
 -(void)sendlocation:(CLLocationCoordinate2D)coordinate title:(NSString *)title detail:(NSString *)detail image:(UIImage *)image {
+    RCLocationMessage *locationMessage = [RCLocationMessage messageWithLocationImage:image location:coordinate locationName:title];
+    locationMessage.extra = [MAMessageUtils getTextMessageJsonStr];
     
+    [[RCIM sharedRCIM] sendMessage:self.conversationType targetId:self.targetId content:locationMessage pushContent:nil pushData:nil success:nil error:nil];
+}
+
+//点击cell
+- (void)didTapMessageCell:(RCMessageModel *)model {
+
+    if (nil == model) return;
+    
+    RCMessageContent *_messageContent = model.content;
+    
+    if ([_messageContent isMemberOfClass:[RCLocationMessage class]] && self.mapType == MAMAPTYPE_Baidu) {
+        // Show the location view controller
+        RCLocationMessage *locationMessage = (RCLocationMessage *)(_messageContent);
+        [self presentCustomLocationViewController:locationMessage];
+    } else {
+        [super didTapMessageCell:model];
+    }
+}
+
+- (void)presentCustomLocationViewController:(RCLocationMessage *)locationMessage {
+    MALocationDetailController *locationViewController = [[MALocationDetailController alloc] initWithCoordinate:locationMessage.location title:locationMessage.locationName];
+    
+    [self presentViewController:locationViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

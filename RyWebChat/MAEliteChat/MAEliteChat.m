@@ -77,7 +77,7 @@ static MAEliteChat *eliteChat=nil;
     
     if (!client) {
         NSLog(@"初始化失败");
-        complete(nil);
+        complete(NO);
     }
     
     [self contentRyTokenService:client.serverAddr userId:client.userId nickName:client.name protrait:client.portraitUri complete:^(NSString *token) {
@@ -116,6 +116,8 @@ static MAEliteChat *eliteChat=nil;
     dic[@"portraitUri"] = portraitUri;
     
     [MAHttpService getRyToken:serverAddr paramer:dic success:^(NSString *token) {
+        
+        if (isEliteEmpty(token)) return complete(nil);
         
         [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
             NSLog(@"---%@",userId);

@@ -41,7 +41,7 @@
     MARyChatViewController *chat = [[MARyChatViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:CHAT_TARGET_ID];
     //设置聊天会话界面要显示的标题
     chat.title = CHAT_TITLE;
-    
+    chat.mapType = MAMAPTYPE_Baidu;
     dispatch_sync(dispatch_get_main_queue(), ^{
         //显示聊天会话界面
         [self.navigationController pushViewController:chat animated:YES];

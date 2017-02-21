@@ -29,7 +29,7 @@
     [[MAEliteChat shareEliteChat] startRyWithAppKey:MARyAppKey];
     _mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [_mapManager start:@"mHHdQoUBC1TZSfDGRcoUHdlk"  generalDelegate:self];
+    BOOL ret = [_mapManager start:@"QBlcsmPTyCEaERqmjTYym21UtuAkKln6"  generalDelegate:self];
     if (!ret) {
         NSLog(@"manager start failed!");
     }

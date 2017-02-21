@@ -11,6 +11,6 @@
 
 @interface MALocationDetailController : UIViewController
 
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title address:(NSString *)address;
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title;
 
 @end

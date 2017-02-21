@@ -10,8 +10,8 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
-#import "Masonry.h"
 #import "MAConfig.h"
+#import "UIView+MARect.h"
 
 
 @interface MALocationDetailController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
@@ -23,23 +23,40 @@
 
 @property(nonatomic,assign)CLLocationCoordinate2D currentCoordinate;
 @property (strong, nonatomic) NSString *titleStr;
-@property (strong, nonatomic) NSString *address;
-
-@property (strong, nonatomic) UILabel *addressLabel;
+@property (strong, nonatomic) UINavigationBar *navBar;
 
 @end
 
 @implementation MALocationDetailController
 
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title address:(NSString *)address {
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title {
     self = [super init];
     if (self) {
+        [self.view setBackgroundColor:[UIColor whiteColor]];
         self.currentCoordinate = coordinate;
         self.titleStr = title;
-        self.address = address;
     }
     
     return self;
+}
+- (UINavigationBar *)navBar {
+    if (!_navBar) {
+        _navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
+        //创建一个item
+        UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"位置信息"];
+        _navBar.items = @[item];
+        
+        UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [leftBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        leftBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        [leftBtn addTarget:self action:@selector(closeEvent) forControlEvents:UIControlEventTouchUpInside];
+        leftBtn.width = 64;
+        leftBtn.height = 64;
+        item.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    }
+    
+    return _navBar;
 }
 
 - (void)viewDidLoad {
@@ -51,36 +68,6 @@
     [self startLocation];
 }
 
-- (UILabel *)addressLabel {
-    if (!_addressLabel) {
-        _addressLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _addressLabel.backgroundColor = [UIColor whiteColor];
-        _addressLabel.textColor = [UIColor blackColor];
-        _addressLabel.numberOfLines = 0;
-        
-        NSMutableParagraphStyle *paraStyle01 = [[NSMutableParagraphStyle alloc] init];
-        paraStyle01.alignment = NSTextAlignmentLeft;  //对齐
-        paraStyle01.headIndent = 0.0f;//行首缩进
-        //参数：（字体大小17号字乘以2，34f即首行空出两个字符）
-        CGFloat emptylen = _addressLabel.font.pointSize * 1;
-        paraStyle01.firstLineHeadIndent = emptylen;//首行缩进
-        paraStyle01.tailIndent = 0.0f;//行尾缩进
-        paraStyle01.lineSpacing = 2.0f;//行间距
-        
-        NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:self.address attributes:@{NSParagraphStyleAttributeName:paraStyle01}];
-        
-        _addressLabel.attributedText = attrText;
-    }
-    
-    return _addressLabel;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    self.navigationController.navigationBar.hidden = NO;
-    
-}
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.mapView viewWillAppear];
@@ -94,44 +81,23 @@
     self.locService.delegate =nil;
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    
-    self.navigationController.navigationBar.hidden = YES;
+- (void)closeEvent {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)configUI
 {
-    WS(ws);
-    
-    [self.view addSubview:self.addressLabel];
-    
-    [self.addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(ws.view.mas_left);
-        make.right.equalTo(ws.view.mas_right);
-        make.bottom.equalTo(ws.view.mas_bottom);
-        make.height.mas_equalTo(60);
-    }];
-    
+    [self.view addSubview:self.navBar];
     
     [self.view addSubview:self.mapView];
-    
-    [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(ws.view.mas_left);
-        make.right.equalTo(ws.view.mas_right);
-        make.top.equalTo(ws.view.mas_top);
-        make.bottom.equalTo(ws.addressLabel.mas_top);
-    }];
-    
-    [self startLocation];
 }
 
 -(void)startLocation
 {
     [self.locService startUserLocationService];
-    self.mapView.showsUserLocation =NO;//先关闭显示的定位图层
-    self.mapView.userTrackingMode =BMKUserTrackingModeFollow;//设置定位的状态
-    self.mapView.showsUserLocation =YES;//显示定位图层
+    
+    self.mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    self.mapView.userTrackingMode = BMKUserTrackingModeFollow;//设置定位的状态
 }
 
 - (void)addAnnotation {
@@ -180,10 +146,8 @@ BMKCoordinateRegion BMKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D c
  */
 - (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
 {
-    //    NSLog(@"heading is %@",userLocation.heading);
     [self.mapView updateLocationData:userLocation];
     [self.locService stopUserLocationService];
-    
     [self addAnnotation];
 }
 
@@ -234,7 +198,7 @@ BMKCoordinateRegion BMKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D c
 {
     if (_mapView==nil)
     {
-        _mapView =[BMKMapView new];
+        _mapView =[[BMKMapView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.navBar.frame))];
         _mapView.zoomEnabled=YES;
         _mapView.zoomEnabledWithTap=NO;
         _mapView.zoomLevel=17;
