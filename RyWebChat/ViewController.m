@@ -29,7 +29,7 @@
 }
 - (IBAction)webChatPressed:(id)sender {
     
-    [[MAEliteChat shareEliteChat] initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"" queueId:1 complete:^(BOOL result) {
+    [[MAEliteChat shareEliteChat] initAndStart:MACLIENTSERVERADDR userId:@"test" name:@"张三" portraitUri:@"https://avatars3.githubusercontent.com/u/15497804?v=3&u=fe6dfc22f6ae32639af26a096f8f67f65b892a28&s=400" queueId:1 complete:^(BOOL result) {
         if (result) [self switchChatViewController];
         else NSLog(@"初始化或启动失败");
     }];
